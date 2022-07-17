@@ -5,7 +5,7 @@ app.component('product-display',{
             required: true
         }
     },
-    
+
     template:
     /*html*/
     `<div class="product-display">
@@ -17,6 +17,7 @@ app.component('product-display',{
                 <h1>{{ title }} </h1>
                 <p v-if="inStock"> In Stock</p>
                 <p v-else> Out of Stock</p>
+                <p>Shipping: {{shipping}}</p>
                 <div
                     v-for="variant, index) in variants"
                     :key="variant.id"
@@ -70,6 +71,12 @@ app.component('product-display',{
         },
         inStock() {
             return this.variants[this.selectedVariant].quantity
+        },
+        shipping() {
+            if (this.premium) {
+                return 'Free'
+            }
+            return 30
         }
     }
 })
