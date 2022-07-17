@@ -37,6 +37,9 @@ app.component('review-form', {
             this.name = ''
             this.review = ''
             this.rating = null
+            console.log(productReview);
+            
         }
     }
+    
 })
