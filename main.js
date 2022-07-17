@@ -19,25 +19,28 @@ const app = Vue.createApp({
         }
     },
     methods: {
-        addToCart() {
-            this.cart += 1
-        },
-        updateImage(variantImage) {
-            this.image = variantImage
-        },
-        updateVariant(index) {
-            this.selectedVariant = index;
+        // addToCart() {
+        //     this.cart += 1
+        // },
+        // updateImage(variantImage) {
+        //     this.image = variantImage
+        // },
+        // updateVariant(index) {
+        //     this.selectedVariant = index;
+        // },
+        updateCart() {
+            this.cart +=1;
         }
     },
-    computed: {
-        title() {
-            return this.brand + ' ' + this.product + (this.onSale ? " On Sale" : "")
-        },
-        image() {
-            return this.variants[this.selectedVariant].image
-        },
-        inStock() {
-            return this.variants[this.selectedVariant].quantity
-        }
-    }
+    // computed: {
+    //     title() {
+    //         return this.brand + ' ' + this.product + (this.onSale ? " On Sale" : "")
+    //     },
+    //     image() {
+    //         return this.variants[this.selectedVariant].image
+    //     },
+    //     inStock() {
+    //         return this.variants[this.selectedVariant].quantity
+    //     }
+    // }
 })
